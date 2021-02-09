@@ -48,6 +48,9 @@ const PlusCircle = styled(PlusCircleFill)`
   transition: all 0.3s;
   transform: rotate(0deg);
   ${({ status }) => (!status ? `left: 252px;` : `left:196px; transform: rotate(45deg);`)}
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 function ChatPage({ dispatch }) {
@@ -126,8 +129,9 @@ function ChatPage({ dispatch }) {
   };
   return (
     <>
-      <StyledUsersList status={toggle}>
-        <PlusCircle status={toggle} onClick={toogleMenu} />
+      <StyledUsersList status={toggle ? 1 : 0}>
+        {console.log(toggle)}
+        <PlusCircle status={toggle ? 1 : 0} onClick={toogleMenu} />
         <UsersList {...state} />
       </StyledUsersList>
       <Main>

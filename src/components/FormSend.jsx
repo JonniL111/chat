@@ -60,12 +60,19 @@ function FormSend({ onAddMessage, onAddImages }) {
     setPopup((popup) => !popup);
   };
 
+  const enterText = (e) => {
+    if (e.code === 'NumpadEnter' || e.code === 'Enter') {
+      onAddMessage(e, text, cleanValue);
+    }
+  };
+
   return (
     <>
       <FormBox onSubmit={(e) => onAddMessage(e, text, cleanValue)}>
         <TextArea
           placeholder="Напишите сообщение..."
           onChange={(e) => setText(e)}
+          onKeyUp={enterText}
           value={text}
           name=""
           id=""></TextArea>
