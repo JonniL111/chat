@@ -6,7 +6,7 @@ const io = require('socket.io')(server, { cors: { origin: '*' } });
 
 app.use(express.json()); //мидлвар для получения body в запросе
 
-app.use(express.static('build'));
+app.use(express.static('build')); //точка запуска по умолчанию для деплоя
 
 const rooms = new Map();
 

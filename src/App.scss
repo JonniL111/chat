@@ -12,9 +12,14 @@
   max-height: 100vh;
   height: 100vh;
   position: relative;
-  padding-bottom: 0;
   display: flex;
   width: 100%;
+  justify-content: center;
+}
+@media handheld {
+  .container {
+    position: fixed;
+  }
 }
 
 .example {

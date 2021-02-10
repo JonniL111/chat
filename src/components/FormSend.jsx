@@ -64,6 +64,7 @@ function FormSend({ onAddMessage, onAddImages }) {
     if (e.code === 'NumpadEnter' || e.code === 'Enter') {
       onAddMessage(e, text, cleanValue);
     }
+    console.log(e.code);
   };
 
   return (

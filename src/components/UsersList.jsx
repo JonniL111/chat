@@ -30,7 +30,7 @@ const Title = styled.div`
   margin: 10px 0 0 10px;
   font-weight: bold;
 `;
-function UsersList({ users, usersInfo }) {
+function UsersList({ users, usersInfo, activeRoom }) {
   const usersListRef = React.useRef(null);
   React.useEffect(() => {
     usersListRef.current.scroll(0, usersListRef.current.scrollHeight);
@@ -54,6 +54,7 @@ function UsersList({ users, usersInfo }) {
   ));
   return (
     <>
+      <Title>Чат: {activeRoom}</Title>
       <Title>Онлайн: {users.length}</Title>
       <List ref={usersListRef}>{list}</List>
     </>

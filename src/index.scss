@@ -19,6 +19,8 @@ html {
 }
 
 input:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus,
+button:focus {
   outline: 0;
 }
