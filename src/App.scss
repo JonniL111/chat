@@ -16,9 +16,10 @@
   width: 100%;
   justify-content: center;
 }
-@media handheld {
+@media (max-width: 768px) {
   .container {
     position: fixed;
+    height: 100%;
   }
 }
 

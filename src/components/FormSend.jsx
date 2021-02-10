@@ -72,8 +72,8 @@ function FormSend({ onAddMessage, onAddImages }) {
       <FormBox onSubmit={(e) => onAddMessage(e, text, cleanValue)}>
         <TextArea
           placeholder="Напишите сообщение..."
-          onInput={(e) => setText(e)}
-          onKeyUp={enterText}
+          onChange={(e) => setText(e)}
+          onInput={enterText}
           value={text}
           name=""
           id=""></TextArea>
