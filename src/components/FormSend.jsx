@@ -64,7 +64,7 @@ function FormSend({ onAddMessage, onAddImages }) {
     if (e.code === 'NumpadEnter' || e.code === 'Enter') {
       onAddMessage(e, text, cleanValue);
     }
-    console.log(e.code);
+    console.log(e);
   };
 
   return (
@@ -72,7 +72,7 @@ function FormSend({ onAddMessage, onAddImages }) {
       <FormBox onSubmit={(e) => onAddMessage(e, text, cleanValue)}>
         <TextArea
           placeholder="Напишите сообщение..."
-          onChange={(e) => setText(e)}
+          onInput={(e) => setText(e)}
           onKeyUp={enterText}
           value={text}
           name=""

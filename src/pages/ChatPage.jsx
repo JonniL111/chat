@@ -130,7 +130,6 @@ function ChatPage({ dispatch }) {
   return (
     <>
       <StyledUsersList status={toggle ? 1 : 0}>
-        {console.log(toggle)}
         <PlusCircle status={toggle ? 1 : 0} onClick={toogleMenu} />
         <UsersList {...state} />
       </StyledUsersList>
