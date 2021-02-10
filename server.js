@@ -1,10 +1,12 @@
 const express = require('express');
 
 const app = express(); //в этой перем экспресовское приложение
-const server = require('http').Server(app); //в этой серверное
+const server = require('http').createServer(app); //в этой серверное
 const io = require('socket.io')(server, { cors: { origin: '*' } });
 
 app.use(express.json()); //мидлвар для получения body в запросе
+
+app.use(express.static('build'));
 
 const rooms = new Map();
 
@@ -117,7 +119,9 @@ io.on('connection', (socket) => {
   console.log('user connection ', socket.id);
 }); // когда пользователь подключился, получаем перем сокет
 
-server.listen(3001, (err) => {
+const PORT = process.env.PORT || 3001;
+
+server.listen(PORT, (err) => {
   if (err) {
     throw Error(err);
   }
