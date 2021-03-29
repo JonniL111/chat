@@ -32,7 +32,7 @@ const MessageTrash = styled(Trash)`
 function MessageFooter({ deleteMessage, onLikeIt, like, messageId, userMessage }) {
   return (
     <MessageFooterInner>
-      <MessageReply />
+      
       <HeartIcon onLikeIt={onLikeIt} count={like.length} messageId={messageId} />
       {userMessage && <MessageTrash onClick={() => deleteMessage(messageId)} />}
     </MessageFooterInner>
